@@ -13,6 +13,7 @@ function buildRow() {
         let inputEl = $('<textarea>')
         let saveEl = $('<div>')
         let rowTime = i+9
+        let currentTime = moment().format('H')
 
         rowEl.addClass('row time-block')
 
@@ -30,6 +31,7 @@ function buildRow() {
 
         containerDiv.append(rowEl)
 
+        if (rowTime < currentTime) {inputEl.addClass('past')}
 
     }
 }
@@ -48,8 +50,6 @@ for (let i = 9; i <= 17; i++){
     $('#' + i).val(localStorage.getItem(i))
 }
 
-let time = moment().format('H')
-console.log(time)
 
 //Change color for input field based on time
 
