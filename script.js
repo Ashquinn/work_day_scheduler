@@ -14,6 +14,7 @@ function buildRow() {
         let saveEl = $('<div>')
         let rowTime = i+9
         let currentTime = moment().format('H')
+        let saveIcon = $('<i>')
 
         rowEl.addClass('row time-block')
 
@@ -24,10 +25,12 @@ function buildRow() {
         inputEl.attr('id', i+9)
 
         saveEl.attr('class', 'saveBtn col-md-1')
+        saveIcon.attr('class', 'fas fa-save')
         
         rowEl.append(timeEl)
         rowEl.append(inputEl)
         rowEl.append(saveEl)
+        saveEl.append(saveIcon)
 
         containerDiv.append(rowEl)
 
@@ -55,9 +58,3 @@ $('.saveBtn').on('click', function(event){
 for (let i = 9; i <= 17; i++){
     $('#' + i).val(localStorage.getItem(i))
 }
-
-
-//Change color for input field based on time
-
-//Functionality for saving users input
-
