@@ -31,7 +31,13 @@ function buildRow() {
 
         containerDiv.append(rowEl)
 
-        if (rowTime < currentTime) {inputEl.addClass('past')}
+        if (rowTime < currentTime) {
+            inputEl.addClass('past')
+        } else if (rowTime == currentTime) {
+            inputEl.addClass('present')
+        } else {
+            inputEl.addClass('future')
+        }
 
     }
 }
